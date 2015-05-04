@@ -1,14 +1,23 @@
 <head>
-  <title>odds-converter</title>
+  <title>Free Odds Converter</title>
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+  <div class="container-fluid">
+    <h1>Free Odds Converter</h1>
 
-  {{> hello}}
+    {{> mainForm}}
+  </div>
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="mainForm">
+  <form>
+    <label for="fractional">Fractional (e.g. 1/2)</label>
+    <input class="form-control" type="text" name="fractional"
+    value="{{fractional}}"/>
+    <label for="decimal">Decimal (e.g. 0.5)</label>
+    <input class="form-control" type="text" name="decimal" value="{{decimal}}"/>
+    <label for="moneyline">Moneyline (e.g. +200)</label>
+    <input class="form-control" type="text" name="moneyline" value="{{moneyline}}"/>
+  </form>
 </template>

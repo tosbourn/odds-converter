@@ -9,3 +9,6 @@ autopublish
 insecure
 fastclick
 twbs:bootstrap
+
+
+npm-container
