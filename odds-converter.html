@@ -3,10 +3,14 @@
 </head>
 
 <body>
-  <div class="container-fluid">
+  <div class="container">
     <h1>Free Odds Converter</h1>
 
     {{> mainForm}}
+    <p>Brought to you by <a href="http://thefootytipster.com/">The Footy
+        Tipster</a> check out our <a
+        href="https://thefootytipster.com/category/picks/?latest">latest free tips</a>.
+    </p>
   </div>
 </body>
 
@@ -15,7 +19,7 @@
     <label for="fractional">Fractional (e.g. 1/2)</label>
     <input class="form-control" type="text" name="fractional"
     value="{{fractional}}"/>
-    <label for="decimal">Decimal (e.g. 0.5)</label>
+    <label for="decimal">Decimal (e.g. 1.5)</label>
     <input class="form-control" type="text" name="decimal" value="{{decimal}}"/>
     <label for="moneyline">Moneyline (e.g. +200)</label>
     <input class="form-control" type="text" name="moneyline" value="{{moneyline}}"/>

@@ -8,7 +8,8 @@ if (Meteor.isClient) {
       return Session.get('fractional');
     },
     decimal: function () {
-      return parseFloat(Session.get('decimal')).toFixed(2);
+      var formattedDecimal = parseFloat(Session.get('decimal')).toFixed(2);
+      return (isNaN(formattedDecimal)) ? "" : formattedDecimal;
     },
     moneyline: function () {
       return Session.get('moneyline');
@@ -22,6 +23,12 @@ if (Meteor.isClient) {
       var numerator = parseInt(split[0], 10),
           denominator = parseInt(split[1], 10);
 
+      if (numerator < 1 || denominator < 1) {
+        Session.set('decimal', '');
+        Session.set('moneyline', '');
+        return;
+      }
+
       var moneyline = Meteor.fractions.moneyline(numerator, denominator);
 
       Session.set('decimal', (numerator / denominator) + 1);
@@ -31,7 +38,11 @@ if (Meteor.isClient) {
     'keyup [name="decimal"]': function (decimal) {
       decimal = parseFloat(decimal.target.value).toFixed(2);
 
-      if (decimal <= 0 || isNaN(decimal)) return;
+      if (decimal <= 1 || isNaN(decimal)) {
+        Session.set('fractional', '');
+        Session.set('moneyline', '');
+        return;
+      }
       var numerator = (decimal-1) * 10000,
           denominator = 10000;
 
