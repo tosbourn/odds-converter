@@ -13,6 +13,6 @@ Feature: Moneylines Work
     Examples:
       |fraction|decimal|moneyline|
       |1/5     |1.20   |-500.00  |
-      |9/25    |1.36   |-270.00  |
+      |9/25    |1.37   |-270.00  |
       |13/10   |2.30   |+130.00  |
       |18/5    |4.60   |+360.00  |
