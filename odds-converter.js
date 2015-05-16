@@ -16,6 +16,10 @@ if (Meteor.isClient) {
     }
   });
 
+  Template.mainForm.rendered = function() {
+    analytics.page('betting-odds-calculator');
+  };
+
   Template.mainForm.events({
     'keyup [name="fractional"]': function (fraction) {
       var split = fraction.target.value.split("/");
