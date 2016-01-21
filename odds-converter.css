@@ -1,2 +1,35 @@
-body { background: #fdfdfd; }
-h1 { color: #6f9c00; }
+body {
+    color: #323c46;
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,Verdana,sans-serif;
+    line-height: 1.7;
+}
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.375em;
+    margin-bottom: .296296296em;
+}
+form {
+    background-color: #f1f4f7;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 1em;
+    margin-bottom: 2em;
+    margin-top: 2em;
+}
+label {
+    display: block;
+    margin-bottom: .25em;
+    font-weight: 700;
+}
+input {
+    width: 100%;
+    padding: .75em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+a {
+    color: #356591;
+}
